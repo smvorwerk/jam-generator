@@ -234,7 +234,7 @@ def ui(**kwargs):
                     # Adapted from https://github.com/rkfg/audiocraft/blob/long/app.py, MIT license.
                     _ = gr.Button("Interrupt").click(fn=interrupt, queue=False)
                 with gr.Row():
-                    background= gr.Image(value="./assets/sd_cyberpunk_hyper-futuristic_neon_rave.png", source="upload", label="Choose an Image for the Video", shape=(768,512), type="filepath", interactive=True)
+                    background= gr.Image(value="./assets/sd_cyberpunk_hyper-futuristic_neon_rave.jpg", source="upload", label="Choose an Image for the Video", shape=(768,512), type="filepath", interactive=True)
                     include_settings = gr.Checkbox(label="Add Configuration to image", value=True, interactive=True)
                     generate_audio_download = gr.Checkbox(label="Generate Downloadable Audio (mp3)", value=False, interactive=True)
                 with gr.Row():
