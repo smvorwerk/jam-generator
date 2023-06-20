@@ -242,7 +242,7 @@ def ui(**kwargs):
         with gr.Row():
             with gr.Column():
                 with gr.Row():
-                    text = gr.Text(label="Input Text", interactive=True, value="4/4 100bpm 320kbps 48khz, Industrial/Electronic Soundtrack, Dark, Intense, Sci-Fi")
+                    text = gr.Text(label="Input Text", interactive=True, value="4/4 100bpm 320kbps 48khz, Electronic Dance Music, Psychedlic, Futuristic Rave")
                     melody = gr.Audio(source="upload", type="numpy", label="Melody Condition (optional)", interactive=True)
                 with gr.Row():
                     submit = gr.Button("Submit")
