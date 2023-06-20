@@ -275,7 +275,7 @@ def ui(**kwargs):
                 output = gr.Video(label="Generated Music")
                 seed_used = gr.Number(label='Seed used', value=-1, interactive=False)
                 if generate_audio_download:
-                    audio_file = gr.File(label="Downloadable Audio (mp3)", type="auto", source="download", interactive=False)
+                    audio_file = gr.File(label="Downloadable Audio (mp3)", type="file", source="download", interactive=False)
                 else:
                     audio_file = None
 
