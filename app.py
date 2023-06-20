@@ -214,12 +214,27 @@ def ui(**kwargs):
     #col-container {max-width: 910px; margin-left: auto; margin-right: auto;}
     a {text-decoration-line: underline; font-weight: 600;}
     """
-    with gr.Blocks(title="Jam Generator", theme="darkdefault", css=css) as interface:
-        gr.Markdown(
-            """
-            # Jam Generator Limited Features Demo
-            """
+    with gr.Blocks(title="Jam Generator", css=css) as interface:
+        with gr.Row().style(equal_height=True):
+            with gr.Column(scale=10):
+                gr.Markdown(
+                    """
+                    # Jam Generator Limited Features Demo
+                    """
+                )
+            with gr.Column(scale=3):
+                with gr.Box():
+                    toggle_dark = gr.Button(value="Toggle Dark").style(full_width=True)
+        toggle_dark.click(
+            None,
+            _js="""
+            () => {
+                document.body.classList.toggle('dark');
+                document.querySelector('gradio-app').style.backgroundColor = 'var(--color-background-primary)'
+            }
+            """,
         )
+
         if IS_SHARED_SPACE and not torch.cuda.is_available():
             gr.Markdown("""
                 ⚠ This Space doesn't work in this shared UI ⚠
