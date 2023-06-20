@@ -214,24 +214,15 @@ def ui(**kwargs):
     #col-container {max-width: 910px; margin-left: auto; margin-right: auto;}
     a {text-decoration-line: underline; font-weight: 600;}
     """
-    with gr.Blocks(title="UnlimitedMusicGen", css=css) as interface:
+    with gr.Blocks(title="Jam Generator", theme="darkdefault", css=css) as interface:
         gr.Markdown(
             """
-            # MusicGen
-            This is your private demo for [MusicGen](https://github.com/facebookresearch/audiocraft), a simple and controllable model for music generation
-
-            presented at: ["Simple and Controllable Music Generation"](https://huggingface.co/papers/2306.05284)
-            Todo: Working on improved transitions between 30 second segments, improve Interrupt.
-
+            # Jam Generator Limited Features Demo
             """
         )
         if IS_SHARED_SPACE and not torch.cuda.is_available():
             gr.Markdown("""
                 ⚠ This Space doesn't work in this shared UI ⚠
-
-                <a href="https://huggingface.co/spaces/musicgen/MusicGen?duplicate=true" style="display: inline-block;margin-top: .5em;margin-right: .25em;" target="_blank">
-                <img style="margin-bottom: 0em;display: inline;margin-top: -.25em;" src="https://bit.ly/3gLdBN6" alt="Duplicate Space"></a>
-                to use it privately, or use the <a href="https://huggingface.co/spaces/facebook/MusicGen">public demo</a>
                 """)
         with gr.Row():
             with gr.Column():
